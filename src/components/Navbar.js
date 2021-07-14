@@ -3,7 +3,7 @@ import styled, { css } from "styled-components/macro";
 import { Link } from "react-router-dom";
 import MenuData from "../data/MenuData";
 import Button from "./Button";
-import { FaBars } from "react-icons/fa"
+import { FaBars } from "react-icons/fa";
 
 const Nav = styled.nav`
   height: 60px;
@@ -41,7 +41,7 @@ const MenuBars = styled(FaBars)`
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(-50%, 45%)
+    transform: translate(-50%, 45%);
   }
 `;
 
