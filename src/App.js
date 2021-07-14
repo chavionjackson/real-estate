@@ -1,8 +1,12 @@
+import React from 'react';
+import Navbar from './components/Navbar';
+import GlobalStyle from './globalStyles';
 
 function App() {
   return (
     <>
-      <h1>Hello Chevy!</h1>
+      <GlobalStyle />
+      <Navbar />
     </>
   );
 }
