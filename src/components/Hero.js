@@ -3,6 +3,7 @@ import styled, { css } from "styled-components/macro";
 import Button from "./Button";
 import { RiArrowRightFill } from "react-icons/ri";
 import { IoArrowForward, IoArrowBack } from "react-icons/io5";
+import { motion, AnimatePresence } from "framer-motion";
 
 const HeroSection = styled.section`
   height: 100vh;
@@ -56,7 +57,7 @@ const HeroSlider = styled.div`
   }
 `;
 
-const HeroImage = styled.img`
+const HeroImage = styled(motion.img)`
   position: absolute;
   top: 0;
   left: 0;
@@ -153,35 +154,61 @@ const Hero = ({ slides }) => {
 
   // console.log(current)
 
+  const fadeAnimation = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.8 } },
+    exit: { opacity: 0 },
+  };
+
   return (
     <HeroSection>
       <HeroWrapper>
-        {slides.map((slide, id) => {
-          const { title, price, path, image, alt, label } = slide;
-          return (
-            <HeroSlide key={id}>
-              {id === current && (
-                <HeroSlider>
-                  <HeroImage src={image} alt={alt} />
-                  <HeroContent>
-                    <h1>{title}</h1>
-                    <p>{price}</p>
-                    <Button
-                      css={`
-                        max-width: 160px;
-                      `}
-                      to={path}
-                      primary="true"
-                    >
-                      {label}
-                      <Arrow />
-                    </Button>
-                  </HeroContent>
-                </HeroSlider>
-              )}
-            </HeroSlide>
-          );
-        })}
+        <AnimatePresence>
+          {slides.map((slide, id) => {
+            const { title, price, path, image, alt, label } = slide;
+            return (
+              <HeroSlide key={id}>
+                {id === current && (
+                  <HeroSlider>
+                    <HeroImage
+                      src={image}
+                      alt={alt}
+                      initial="hidden"
+                      animate="visible"
+                      exit="exit"
+                      variants={fadeAnimation}
+                    />
+                    <HeroContent>
+                      <h1 data-aos="fade-down" data-aos-duration="600">
+                        {title}
+                      </h1>
+                      <p
+                        data-aos="fade-down"
+                        data-aos-duration="600"
+                        data-aos-delay="200"
+                      >
+                        {price}
+                      </p>
+                      <Button
+                        data-aos="zoom-out"
+                        data-aos-duration="500"
+                        data-aos-delay="250"
+                        css={`
+                          max-width: 160px;
+                        `}
+                        to={path}
+                        primary="true"
+                      >
+                        {label}
+                        <Arrow />
+                      </Button>
+                    </HeroContent>
+                  </HeroSlider>
+                )}
+              </HeroSlide>
+            );
+          })}
+        </AnimatePresence>
         <SliderButtons>
           <PrevArrow onClick={prevSlide} />
           <NextArrow onClick={nextSlide} />
