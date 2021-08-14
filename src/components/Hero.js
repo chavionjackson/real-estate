@@ -154,11 +154,11 @@ const Hero = ({ slides }) => {
 
   // console.log(current)
 
-  const fadeAnimation = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.8 } },
-    exit: { opacity: 0 },
-  };
+  // const fadeAnimation = {
+  //   hidden: { opacity: 0 },
+  //   visible: { opacity: 1, transition: { duration: 0.8 } },
+  //   exit: { opacity: 0 },
+  // };
 
   return (
     <HeroSection>
@@ -176,7 +176,7 @@ const Hero = ({ slides }) => {
                       initial="hidden"
                       animate="visible"
                       exit="exit"
-                      variants={fadeAnimation}
+                      // variants={fadeAnimation}
                     />
                     <HeroContent>
                       <h1 data-aos="fade-down" data-aos-duration="600">
