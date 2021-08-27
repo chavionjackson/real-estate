@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import { IoMdArrowRoundForward } from "react-icons/io";
 import House1 from "../images/home1.jpg";
 import House2 from "../images/home2.jpg";
+import sanDiego from "../images/sanDiego.jpg";
+import scotts from "../images/scotts.jpg";
+import port from "../images/port.jpg";
+import wash from "../images/wash.jpg";
+import texas from "../images/texas.jpg";
+import mil from "../images/mil.jpg";
 
 const Section = styled.section`
   width: 100%;
@@ -33,6 +39,7 @@ const Heading = styled.div`
 
 const InfoRow = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   padding: 1rem 0rem;
   justify-content: space-evenly;
@@ -132,6 +139,111 @@ const Listings = () => {
               `}
             />
             <h2>2 Bed 2 Bath House in Miami, Florida</h2>
+            <InfoLink to="/homes">
+              <p>View Details</p>
+              <Arrow />
+            </InfoLink>
+          </InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-up"
+            data-aos-duration="1200"
+            // data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image src={sanDiego} alt="home" />
+            <h2>4 Bed 6 Bath House in San Diego, California</h2>
+            <InfoLink to="/homes">
+              <p>View Details</p>
+              <Arrow />
+            </InfoLink>
+          </InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-down"
+            data-aos-duration="1200"
+            // data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image
+              src={scotts}
+              alt="home"
+              css={`
+                margin-top: 120px;
+                @media screen and (max-width: 768px) {
+                  margin-top: 0px;
+                }
+              `}
+            />
+            <h2>3 Bed 2 Bath House in Scottsdale, Arizona</h2>
+            <InfoLink to="/homes">
+              <p>View Details</p>
+              <Arrow />
+            </InfoLink>
+          </InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-up"
+            data-aos-duration="1200"
+            // data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image src={port} alt="home" />
+            <h2>4 Bed 4 Bath House in Portland, Oregon</h2>
+            <InfoLink to="/homes">
+              <p>View Details</p>
+              <Arrow />
+            </InfoLink>
+          </InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-down"
+            data-aos-duration="1200"
+            // data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image
+              src={wash}
+              alt="home"
+              css={`
+                margin-top: 120px;
+                @media screen and (max-width: 768px) {
+                  margin-top: 0px;
+                }
+              `}
+            />
+            <h2>3 Bed 5 Bath House in Bellevue, Washington</h2>
+            <InfoLink to="/homes">
+              <p>View Details</p>
+              <Arrow />
+            </InfoLink>
+          </InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-up"
+            data-aos-duration="1200"
+            // data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image src={texas} alt="home" />
+            <h2>8 Bed 5 Bath House in Austin, Texas</h2>
+            <InfoLink to="/homes">
+              <p>View Details</p>
+              <Arrow />
+            </InfoLink>
+          </InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-down"
+            data-aos-duration="1200"
+            // data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image
+              src={mil}
+              alt="home"
+              css={`
+                margin-top: 120px;
+                @media screen and (max-width: 768px) {
+                  margin-top: 0px;
+                }
+              `}
+            />
+            <h2>7 Bed 5 Bath House in Milwaukee, Wisconsin</h2>
             <InfoLink to="/homes">
               <p>View Details</p>
               <Arrow />
